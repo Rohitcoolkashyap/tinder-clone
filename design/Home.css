@@ -1,14 +1,13 @@
-body 
-{
-background-image: url("vitor-pinto-5EtKHok-obE-unsplash.jpg");
+body {
+  background-image: url('vitor-pinto-5EtKHok-obE-unsplash.jpg');
 
-background-size:1220px 1660px;
+  background-size: 1220px 1660px;
 }
-h2{text-align:center;
-font-size:150px;
-color:white;
+h2 {
+  text-align: center;
+  font-size: 150px;
+  clear: left;
 }
-
 
 .topright {
   position: absolute;
@@ -17,7 +16,7 @@ color:white;
   font-size: 18px;
 }
 .button {
-  background-color:red;
+  background-color: red;
   border: none;
   color: white;
   padding: 20px;
@@ -27,6 +26,8 @@ color:white;
   font-size: 16px;
   margin: 10px 100px;
   cursor: pointer;
-  float:left;
+  float: left;
 }
-.button3 {border-radius: 8px;}
+.button3 {
+  border-radius: 8px;
+}
