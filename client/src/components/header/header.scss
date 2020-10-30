@@ -1,0 +1,11 @@
+@import '../../App.scss';
+.header {
+  @extend .flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f9f9f9;
+  z-index: 100;
+}
+.header__logo {
+  object-fit: contain;
+  height: 40px;
+}
