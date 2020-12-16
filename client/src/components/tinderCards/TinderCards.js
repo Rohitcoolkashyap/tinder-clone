@@ -14,12 +14,11 @@ export default function TinderCards() {
     }
     fetchData();
   }, []);
-  console.log(people);
   const swiped = (direction, nameToDelete) => {
-    console.log(nameToDelete);
+    // console.log(nameToDelete);
   };
   const outOfFrame = (name) => {
-    console.log('left the screen', name);
+    // console.log('left the screen', name);
   };
   return (
     <div className="tinderCards">
