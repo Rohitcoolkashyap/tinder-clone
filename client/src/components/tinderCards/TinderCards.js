@@ -5,7 +5,6 @@ import TinderCard from 'react-tinder-card';
 import axios from '../../axios';
 import { useEffect } from 'react';
 export default function TinderCards() {
-  console.log(axios.defaults.baseUrl);
   const [people, setPeople] = useState([]);
   useEffect(() => {
     async function fetchData() {
