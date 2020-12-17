@@ -14,3 +14,32 @@
   padding: 20px;
   color: gray;
 }
+.chatscreen__textUser {
+  margin-left: auto;
+  background-color: #29b3cd;
+  border-radius: 20px;
+  padding: 15px;
+  color: white;
+}
+
+.chatscreen__form {
+  display: flex;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid lightgray;
+}
+
+.chatscreen__input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
+.chatscreen__button {
+  border: none;
+  margin-right: 20px;
+  background-color: white;
+  font-weight: bolder;
+  color: #fe3d71;
+}

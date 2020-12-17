@@ -1,9 +1,12 @@
 import React from 'react';
 import './chat.scss';
 import Avatar from '@material-ui/core/Avatar';
+import { useHistory } from 'react-router-dom';
 export default function Chat({ name, msg, profile, timestamp }) {
+  const history = useHistory();
+
   return (
-    <div className="chat">
+    <div className="chat" onClick={() => history.push(`/chat/${name}`)}>
       <Avatar className="chat__img" alt={name} src={profile}></Avatar>
 
       <div className="chat__details">
