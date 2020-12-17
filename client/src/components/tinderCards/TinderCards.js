@@ -25,7 +25,7 @@ export default function TinderCards() {
         {people.map((character) => (
           <TinderCard
             className="swipe"
-            key={character.name}
+            key={character._id}
             preventSwipe={['up', 'down']}
             onSwipe={(dir) => swiped(dir, character.name)}
             onCardLeftScreen={() => outOfFrame(character.name)}
