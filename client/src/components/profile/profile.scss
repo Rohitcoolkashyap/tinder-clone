@@ -1,0 +1,19 @@
+.profile {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+}
+.profile__right {
+  flex: 0.5;
+}
+.profile__left {
+  flex: 0.5;
+}
+
+// /* Landscape phones and down */
+@media (max-width: 480px) {
+  .MuiPaper-root {
+    width: 90px !important;
+    height: 90px !important;
+  }
+}

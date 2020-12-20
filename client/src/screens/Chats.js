@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import Chat from './Chat';
-import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import db from '../firebase';
 export default function Chats() {
-  const data = [1, 2, 3, 4, 5];
   const [matchUsers, setMatchUsers] = useState([]);
-
+  const heading = {
+    textAlign: 'center',
+  };
   useEffect(() => {
     db.collection('matchedUser').onSnapshot((snapshot) =>
       setMatchUsers(
@@ -20,9 +20,11 @@ export default function Chats() {
       ),
     );
   }, []);
-  // console.log(matchUsers);
   return (
     <div className="chats">
+      <h1 style={heading} className="chats__heading">
+        Your matching
+      </h1>
       {matchUsers.map((user) => (
         <Chat
           key={user.id}

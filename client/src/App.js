@@ -8,6 +8,7 @@ import ChatScreen from './screens/ChatScreen';
 import Home from './components/homepage/Home';
 import { useStateValue } from './StateProvider';
 import Cookie from 'js-cookie';
+import Profile from './components/profile/Profile';
 function App() {
   const [{ user }, dispatch] = useStateValue();
 
@@ -23,7 +24,6 @@ function App() {
                 <Header />
 
                 <TinderCards />
-                <SwipeButtons />
               </Route>
 
               <Route path="/chat/:personId" exact>
@@ -33,6 +33,11 @@ function App() {
               <Route path="/chat" exact>
                 <Header backButton="/" />
                 <Chat />
+              </Route>
+              <Route path="/profile" exact>
+                <Header backButton="/" />
+
+                <Profile />
               </Route>
             </Switch>
           </>

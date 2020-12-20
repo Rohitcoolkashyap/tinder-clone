@@ -23,17 +23,88 @@
     font-size: 2.6rem;
   }
 }
-.tagline {
-  // text-align: center;
+.home__center {
   display: grid;
   place-items: center;
+  transform: translateY(110%);
+  > button {
+    width: 260px !important;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.27);
+    z-index: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 8px;
+    padding-left: 8px;
+    overflow: hidden;
+    min-height: 55px;
+    max-width: 315px;
+    margin-top: 20px;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+    cursor: pointer;
+    // background: linear-gradient(262deg, #ff7854, #fd267d);
+    border-radius: 100px;
+  }
+}
+.tagline {
+  // text-align: center;
+
   font-size: 150px;
   // font-size: 6vw;
   // font-weight: 500;
   text-align: center;
-  transform: translateY(150%);
 }
 .home__button {
   font-weight: bolder !important;
   width: 110px !important;
+}
+
+// /* Landscape phones and down */
+@media (max-width: 480px) {
+  .home {
+    background-image: url('caleb-ekeroth-wSBQFWF77lI-unsplash.jpg') !important;
+  }
+  .home__center {
+    transform: translateY(100%);
+  }
+  .tagline {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 10vw;
+    max-width: 100%;
+    line-height: 1.18;
+    font-style: italic;
+    font-weight: 800;
+  }
+  .top__left {
+    > img {
+      width: 50px;
+      height: 28px;
+      // border: 1px solid red;
+    }
+    > h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+    }
+  }
+  .home__button {
+    width: 100px !important;
+    height: 40px !important;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .home__center {
+    transform: translateY(90%);
+  }
+  .home {
+    background-image: url('caleb-ekeroth-wSBQFWF77lI-unsplash.jpg') !important;
+  }
+  .tagline {
+    padding-left: 15px;
+    padding-left: 15px;
+    font-size: 10vw;
+    max-width: 100%;
+  }
 }

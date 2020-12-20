@@ -14,6 +14,7 @@ export default function Home() {
       .signInWithPopup(provider)
       .then((result) => {
         Cookie.set('userInfo', JSON.stringify(result.credential.accessToken));
+        localStorage.setItem('imgData', result.user.photoURL);
 
         dispatch({
           type: actionTypes.SET_USER,
@@ -54,7 +55,19 @@ export default function Home() {
           log in
         </Button>
       </div>
-      <h2 className="tagline">Start something epic</h2>
+      <div className="home__center">
+        <h2 className="tagline">Start something epic</h2>
+
+        <Button
+          onClick={signIn}
+          className="center__button"
+          size="large"
+          variant="contained"
+          color="secondary"
+        >
+          sign up with google
+        </Button>
+      </div>
     </div>
   );
 }

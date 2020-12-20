@@ -7,6 +7,7 @@ export default function Chat({ name, msg, profile, timestamp, id }) {
 
   return (
     <div className="chat" onClick={() => history.push(`/chat/${id}`)}>
+      
       <Avatar className="chat__img" alt={name} src={profile}></Avatar>
 
       <div className="chat__details">

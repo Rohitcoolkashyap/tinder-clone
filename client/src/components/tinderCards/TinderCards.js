@@ -4,15 +4,39 @@ import './tinderCards.scss';
 import TinderCard from 'react-tinder-card';
 import axios from '../../axios';
 import { useEffect } from 'react';
+import SwipeButtons from '../swipeButtons/SwipeButtons';
 export default function TinderCards() {
   const [people, setPeople] = useState([]);
+  const [refresh, setRefresh] = useState(false);
   useEffect(() => {
     async function fetchData() {
       const req = await axios.get(`${axios.defaults.baseUrl}/tinder/cards`);
+      const array = req.data;
+      var currentIndex = array.length,
+        temporaryValue,
+        randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
       setPeople(req.data);
     }
     fetchData();
-  }, []);
+  }, [refresh]);
+
+  const refreshFunc = () => {
+    console.log('call')
+    setRefresh(!refresh);
+  };
   const swiped = (direction, nameToDelete) => {
     // console.log(nameToDelete);
   };
@@ -38,6 +62,7 @@ export default function TinderCards() {
             </div>
           </TinderCard>
         ))}
+        <SwipeButtons callRefresh={refreshFunc} />
       </div>
     </div>
   );
