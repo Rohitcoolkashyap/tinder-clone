@@ -5,26 +5,38 @@ import Header from './components/header/Header';
 import SwipeButtons from './components/swipeButtons/SwipeButtons';
 import TinderCards from './components/tinderCards/TinderCards';
 import ChatScreen from './screens/ChatScreen';
+import Home from './components/homepage/Home';
+import { useStateValue } from './StateProvider';
+import Cookie from 'js-cookie';
 function App() {
+  const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className="app">
       <BrowserRouter>
-        <Switch>
-          <Route path="/" exact>
-            <Header />
+        {!user && Cookie.get('userInfo') === undefined ? (
+          <Home />
+        ) : (
+          <>
+            <Switch>
+              <Route path="/" exact>
+                <Header />
 
-            <TinderCards />
-            <SwipeButtons />
-          </Route>
-          <Route path="/chat/:person" exact>
-            <Header backButton="/chat" />
-            <ChatScreen />
-          </Route>
-          <Route path="/chat" exact>
-            <Header backButton="/" />
-            <Chat />
-          </Route>
-        </Switch>
+                <TinderCards />
+                <SwipeButtons />
+              </Route>
+
+              <Route path="/chat/:personId" exact>
+                <Header backButton="/chat" />
+                <ChatScreen />
+              </Route>
+              <Route path="/chat" exact>
+                <Header backButton="/" />
+                <Chat />
+              </Route>
+            </Switch>
+          </>
+        )}
       </BrowserRouter>
     </div>
   );

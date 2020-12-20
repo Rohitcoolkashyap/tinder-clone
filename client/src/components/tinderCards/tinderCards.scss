@@ -23,9 +23,15 @@
   width: 100%;
   height: 100%;
 }
-.card >h3 {
+.card > h3 {
   position: absolute;
   bottom: 0;
   margin: 10px;
   color: #fff;
+}
+
+// /* Large desktop */
+@media (min-width: 1200px) {
+  .card {
+  }
 }

@@ -5,7 +5,10 @@ import ForumIcon from '@material-ui/icons/Forum';
 import { IconButton } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { useStateValue } from '../../StateProvider';
 export default function Header({ backButton }) {
+  const [{ user }] = useStateValue();
+  console.log(user);
   const history = useHistory();
   return (
     <div className="header">

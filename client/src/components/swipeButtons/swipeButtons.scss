@@ -33,3 +33,27 @@
   padding: 3vw !important;
   color: #915dd1 !important;
 }
+
+// /* Large desktop */
+@media (min-width: 1200px) {
+  .swipeButtons__repeat {
+    padding: 1vw !important;
+    color: #f5b748 !important;
+  }
+  .swipeButtons__left {
+    padding: 1vw !important;
+    color: #ec5e6f !important;
+  }
+  .swipeButtons__star {
+    padding: 1vw !important;
+    color: #62b4f9 !important;
+  }
+  .swipeButtons__right {
+    padding: 1vw !important;
+    color: #76e2b3 !important;
+  }
+  .swipeButtons__lightning {
+    padding: 1vw !important;
+    color: #915dd1 !important;
+  }
+}
