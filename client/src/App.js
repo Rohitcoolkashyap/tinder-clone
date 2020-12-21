@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Chat from './screens/Chats';
 import Header from './components/header/Header';
 import SwipeButtons from './components/swipeButtons/SwipeButtons';
@@ -9,9 +9,12 @@ import Home from './components/homepage/Home';
 import { useStateValue } from './StateProvider';
 import Cookie from 'js-cookie';
 import Profile from './components/profile/Profile';
+import GenderForm from './components/homepage/GenderForm';
+import { useEffect } from 'react';
+import { useState } from 'react';
 function App() {
   const [{ user }, dispatch] = useStateValue();
-
+  const gender = localStorage.getItem('gender');
   return (
     <div className="app">
       <BrowserRouter>
@@ -19,27 +22,31 @@ function App() {
           <Home />
         ) : (
           <>
-            <Switch>
-              <Route path="/" exact>
-                <Header />
+            {Cookie.get('userInfo') !== null && gender === null ? (
+              <GenderForm />
+            ) : (
+              <Switch>
+                <Route path="/" exact>
+                  <Header />
 
-                <TinderCards />
-              </Route>
+                  <TinderCards />
+                </Route>
 
-              <Route path="/chat/:personId" exact>
-                <Header backButton="/chat" />
-                <ChatScreen />
-              </Route>
-              <Route path="/chat" exact>
-                <Header backButton="/" />
-                <Chat />
-              </Route>
-              <Route path="/profile" exact>
-                <Header backButton="/" />
+                <Route path="/chat/:personId" exact>
+                  <Header backButton="/chat" />
+                  <ChatScreen />
+                </Route>
+                <Route path="/chat" exact>
+                  <Header backButton="/" />
+                  <Chat />
+                </Route>
+                <Route path="/profile" exact>
+                  <Header backButton="/" />
 
-                <Profile />
-              </Route>
-            </Switch>
+                  <Profile />
+                </Route>
+              </Switch>
+            )}
           </>
         )}
       </BrowserRouter>

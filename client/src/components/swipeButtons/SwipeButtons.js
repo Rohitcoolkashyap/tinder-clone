@@ -9,7 +9,10 @@ import { IconButton } from '@material-ui/core';
 export default function SwipeButtons({ callRefresh }) {
   return (
     <div className="swipeButtons">
-      <IconButton onClick={callRefresh} className="swipeButtons__repeat">
+      <IconButton
+        onClick={() => window.location.reload()}
+        className="swipeButtons__repeat"
+      >
         <ReplayIcon fontSize="large" />
       </IconButton>
 

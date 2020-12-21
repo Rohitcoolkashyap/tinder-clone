@@ -26,3 +26,11 @@ a {
 .chat__timestamp {
   color: lightgray;
 }
+.chats__heading {
+  color: rgb(245, 57, 57);
+}
+@media (max-width: 480px) {
+  .chats__heading {
+    font-size: 1.8rem;
+  }
+}

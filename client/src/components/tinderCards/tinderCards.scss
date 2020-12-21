@@ -29,7 +29,30 @@
   margin: 10px;
   color: #fff;
 }
+.card__like {
+  color: rgb(37, 204, 37);
+  opacity: 0.9;
 
+  font-weight: bold;
+  border: 3px solid rgb(51, 224, 51);
+  width: 70px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+.nope {
+  color: rgb(235, 45, 45);
+  width: 90px;
+  border: 3px solid rgb(235, 45, 45);
+}
+.tinderCards__loading {
+  display: grid;
+  place-items: center;
+  transform: translateY(60%);
+  > img {
+    width: 400px;
+    height: 300px;
+  }
+}
 // /* Large desktop */
 @media (min-width: 1200px) {
   .card {
