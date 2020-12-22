@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  transform: translateY(120%);
+  flex-direction: column;
+  transform: translateY(90%);
 }
 .genderForm__box {
   display: grid !important;
@@ -17,4 +18,9 @@
 }
 .genderForm__img {
   height: 700px;
+}
+.genderForm__title {
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #524c4c;
 }

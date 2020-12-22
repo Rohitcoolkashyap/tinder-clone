@@ -74,7 +74,6 @@ export default function TinderCards() {
                 style={{ backgroundImage: `url(${character.imgUrl})` }}
                 className="card"
               >
-                {swipe && <h1 className={`card__like ${text}`}>{text}</h1>}
                 <h3>{character.name}</h3>
               </div>
 

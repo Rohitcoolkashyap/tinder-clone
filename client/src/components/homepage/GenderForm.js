@@ -22,6 +22,8 @@ export default function GenderForm() {
   };
   return (
     <div className="genderForm">
+      <h1 className='genderForm__title'>Interested in</h1>
+
       <div className="genderForm__box">
         <Button onClick={handleMale} variant="contained" color="secondary">
           Male

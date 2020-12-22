@@ -46,6 +46,9 @@ function App() {
 
                   <Profile />
                 </Route>
+                <Route to="test">
+                  <GenderForm />
+                </Route>
               </Switch>
             )}
           </>

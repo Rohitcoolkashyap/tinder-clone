@@ -2,9 +2,9 @@
   position: relative;
   background-color: #fff;
   width: 600px;
-  padding: 20px;
+  padding: 10px;
   max-width: 85vw;
-  height: 50vh;
+  height: 48vh;
   box-shadow: 0px 18px 33px 0px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   background-size: cover;
@@ -32,7 +32,6 @@
 .card__like {
   color: rgb(37, 204, 37);
   opacity: 0.9;
-
   font-weight: bold;
   border: 3px solid rgb(51, 224, 51);
   width: 70px;
@@ -51,7 +50,6 @@
   > img {
     width: 300px;
     height: 220px;
-    // border: 1px solid red;
   }
 }
 // /* Large desktop */
