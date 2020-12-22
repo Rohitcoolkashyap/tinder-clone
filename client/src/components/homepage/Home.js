@@ -15,6 +15,11 @@ export default function Home() {
       .then((result) => {
         Cookie.set('userInfo', JSON.stringify(result.credential.accessToken));
         localStorage.setItem('imgData', result.user.photoURL);
+        localStorage.setItem(
+          'userData',
+          JSON.stringify(result.additionalUserInfo.profile),
+        );
+        localStorage.setItem('phoneNumber', result.user.phoneNumber);
 
         dispatch({
           type: actionTypes.SET_USER,
@@ -23,11 +28,11 @@ export default function Home() {
       })
       .catch((error) => console.error(error));
   };
-  const a = 'caleb-ekeroth-wSBQFWF77lI-unsplash.jpg';
-  const b = 'alexander-popov-H-FjwCHavfo-unsplash.jpg';
+  // const a = 'caleb-ekeroth-wSBQFWF77lI-unsplash.jpg';
+  // const b = 'alexander-popov-H-FjwCHavfo-unsplash.jpg';
   const c = 'w.jpg';
-  const d = 'roger-keller-yWqK0KsNTXQ-unsplash.jpg';
-  const e = 'tekang-15uadDpdo24-unsplash.jpg';
+  // const d = 'roger-keller-yWqK0KsNTXQ-unsplash.jpg';
+  // const e = 'tekang-15uadDpdo24-unsplash.jpg';
   var sectionStyle = {
     width: '100%',
     height: '100%',

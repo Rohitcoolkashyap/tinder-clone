@@ -46,7 +46,6 @@ export default function TinderCards() {
     setRefresh(!refresh);
   };
   const swiped = (direction, nameToDelete) => {
-    console.log(direction);
     setText(direction === 'right' ? 'like' : 'nope');
     setSwipe(true);
   };
@@ -78,6 +77,7 @@ export default function TinderCards() {
                 {swipe && <h1 className={`card__like ${text}`}>{text}</h1>}
                 <h3>{character.name}</h3>
               </div>
+
               {people.length === 0 && (
                 <div className="tinderCards__loading">
                   <img src="source1.gif" alt="" />
@@ -87,7 +87,6 @@ export default function TinderCards() {
           ))}
         </div>
       )}
-      <SwipeButtons callRefresh={refreshFunc} />
     </div>
   );
 }

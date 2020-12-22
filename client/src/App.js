@@ -30,6 +30,7 @@ function App() {
                   <Header />
 
                   <TinderCards />
+                  <SwipeButtons />
                 </Route>
 
                 <Route path="/chat/:personId" exact>
